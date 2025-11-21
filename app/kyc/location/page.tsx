@@ -85,7 +85,7 @@ export default function LocationPage() {
                   size="sm"
                   fullWidth
                   onClick={() => {
-                    document.querySelector('input[type="file"]')?.click();
+                    (document.querySelector('input[type="file"]') as HTMLInputElement)?.click();
                   }}
                 >
                   <Camera className="mr-2" size={16} />

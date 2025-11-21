@@ -9,7 +9,9 @@ export default function CardDetailsPage() {
   const [fullName, setFullName] = useState("User");
 
   useEffect(() => {
-    setFullName(localStorage.getItem("fullName") || "User");
+    if (typeof window !== "undefined") {
+      setFullName(localStorage.getItem("fullName") || "User");
+    }
   }, []);
 
   return (

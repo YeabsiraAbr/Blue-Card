@@ -12,12 +12,16 @@ export default function PersonalPage() {
   const [email, setEmail] = useState("");
 
   useEffect(() => {
-    setFullName(localStorage.getItem("fullName") || "");
-    setPhone(localStorage.getItem("phoneNumber") || "");
+    if (typeof window !== "undefined") {
+      setFullName(localStorage.getItem("fullName") || "");
+      setPhone(localStorage.getItem("phoneNumber") || "");
+    }
   }, []);
 
   const handleSave = () => {
-    localStorage.setItem("fullName", fullName);
+    if (typeof window !== "undefined") {
+      localStorage.setItem("fullName", fullName);
+    }
     // In real app, save to backend
   };
 

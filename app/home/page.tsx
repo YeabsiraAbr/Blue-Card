@@ -18,11 +18,15 @@ export default function HomePage() {
   const [trustScore, setTrustScore] = useState(650);
   const [creditLimit, setCreditLimit] = useState(50000);
   const [availableBalance, setAvailableBalance] = useState(35000);
+  const [cardholderName, setCardholderName] = useState("User");
 
   useEffect(() => {
     // In real app, fetch from API
-    const status = localStorage.getItem("verificationStatus") || "unverified";
-    setVerificationStatus(status as any);
+    if (typeof window !== "undefined") {
+      const status = localStorage.getItem("verificationStatus") || "unverified";
+      setVerificationStatus(status as any);
+      setCardholderName(localStorage.getItem("fullName") || "User");
+    }
   }, []);
 
   const recentTransactions = [
@@ -146,7 +150,7 @@ export default function HomePage() {
               cardNumber="4532123456789012"
               expiryDate="12/25"
               cvv="123"
-              cardholderName={localStorage.getItem("fullName") || "User"}
+              cardholderName={cardholderName}
             />
           </div>
 

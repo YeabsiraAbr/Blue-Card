@@ -16,7 +16,9 @@ export default function AdminLoginPage() {
     e.preventDefault();
     // In real app, authenticate with backend
     if (email && password) {
-      localStorage.setItem("adminAuthenticated", "true");
+      if (typeof window !== "undefined") {
+        localStorage.setItem("adminAuthenticated", "true");
+      }
       router.push("/admin/dashboard");
     } else {
       setError("Please enter both email and password");

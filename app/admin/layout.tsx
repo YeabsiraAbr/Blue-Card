@@ -14,9 +14,11 @@ export default function AdminLayout({
 
   useEffect(() => {
     // Check authentication
-    const isAuthenticated = localStorage.getItem("adminAuthenticated");
-    if (!isAuthenticated && pathname !== "/admin/login") {
-      router.push("/admin/login");
+    if (typeof window !== "undefined") {
+      const isAuthenticated = localStorage.getItem("adminAuthenticated");
+      if (!isAuthenticated && pathname !== "/admin/login") {
+        router.push("/admin/login");
+      }
     }
   }, [pathname, router]);
 

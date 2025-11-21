@@ -294,6 +294,12 @@ export function calculateCreditScore(
   let fraudFlag: "LOW" | "MEDIUM" | "HIGH" = "LOW";
   if (request.identity_verification?.device_is_rooted) {
     fraudFlag = "HIGH";
+  } else if (
+    request.identity_verification &&
+    (request.identity_verification.selfie_match_score < 0.7 ||
+      request.identity_verification.id_scan_quality_score < 0.7)
+  ) {
+    fraudFlag = "MEDIUM";
   }
 
   if (fraudFlag === "MEDIUM") {

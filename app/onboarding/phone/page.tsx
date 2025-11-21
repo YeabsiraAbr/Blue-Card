@@ -18,7 +18,9 @@ export default function PhonePage() {
       return;
     }
     // Store phone number (in real app, use context or state management)
-    localStorage.setItem("phoneNumber", phone);
+    if (typeof window !== "undefined") {
+      localStorage.setItem("phoneNumber", phone);
+    }
     router.push("/onboarding/otp");
   };
 

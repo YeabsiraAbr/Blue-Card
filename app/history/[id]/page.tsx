@@ -4,6 +4,7 @@ import { useRouter, useParams } from "next/navigation";
 import Header from "@/components/ui/Header";
 import Card from "@/components/ui/Card";
 import { CheckCircle, XCircle, Clock } from "lucide-react";
+import type { Transaction } from "@/types";
 
 export default function TransactionDetailPage() {
   const router = useRouter();
@@ -11,16 +12,14 @@ export default function TransactionDetailPage() {
   const id = params?.id as string;
 
   // In real app, fetch transaction by ID
-  const transaction = {
+  const transaction: Transaction = {
     id: id,
-    type: "payment" as const,
+    type: "payment",
     amount: 1500,
     merchant: "Coffee Shop",
     date: new Date(),
-    status: "completed" as const,
+    status: "completed",
     transactionId: "TXN001",
-    description: "Payment for coffee and snacks",
-    location: "Addis Ababa, Ethiopia",
   };
 
   const getStatusIcon = () => {
@@ -45,7 +44,11 @@ export default function TransactionDetailPage() {
                 {getStatusIcon()}
               </div>
               <h2 className="text-2xl font-bold text-gray-900 mb-2">
-                {transaction.status === "completed" ? "Payment Successful" : transaction.status === "failed" ? "Payment Failed" : "Pending"}
+                {transaction.status === "completed"
+                  ? "Payment Successful"
+                  : transaction.status === "failed"
+                  ? "Payment Failed"
+                  : "Pending"}
               </h2>
               <p
                 className={`text-3xl font-bold ${
@@ -85,22 +88,18 @@ export default function TransactionDetailPage() {
                   })}
                 </span>
               </div>
-              {transaction.description && (
-                <div className="flex justify-between">
-                  <span className="text-gray-600">Description:</span>
-                  <span className="font-semibold text-gray-900 text-right max-w-[60%]">
-                    {transaction.description}
-                  </span>
-                </div>
-              )}
-              {transaction.location && (
-                <div className="flex justify-between">
-                  <span className="text-gray-600">Location:</span>
-                  <span className="font-semibold text-gray-900 text-right max-w-[60%]">
-                    {transaction.location}
-                  </span>
-                </div>
-              )}
+              <div className="flex justify-between">
+                <span className="text-gray-600">Description:</span>
+                <span className="font-semibold text-gray-900 text-right max-w-[60%]">
+                  Payment for coffee and snacks
+                </span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-gray-600">Location:</span>
+                <span className="font-semibold text-gray-900 text-right max-w-[60%]">
+                  Addis Ababa, Ethiopia
+                </span>
+              </div>
               <div className="flex justify-between">
                 <span className="text-gray-600">Status:</span>
                 <span

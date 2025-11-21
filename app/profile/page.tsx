@@ -18,10 +18,14 @@ import {
 
 export default function ProfilePage() {
   const router = useRouter();
-  const [fullName, setFullName] = useState("");
+  const [fullName, setFullName] = useState("User");
+  const [phoneNumber, setPhoneNumber] = useState("+251 9XX XXX XXX");
 
   useEffect(() => {
-    setFullName(localStorage.getItem("fullName") || "User");
+    if (typeof window !== "undefined") {
+      setFullName(localStorage.getItem("fullName") || "User");
+      setPhoneNumber(localStorage.getItem("phoneNumber") || "+251 9XX XXX XXX");
+    }
   }, []);
 
   const menuItems = [
@@ -64,7 +68,7 @@ export default function ProfilePage() {
                 {fullName}
               </h2>
               <p className="text-sm text-gray-600">
-                {localStorage.getItem("phoneNumber") || "+251 9XX XXX XXX"}
+                {phoneNumber}
               </p>
             </div>
           </Card>
@@ -100,7 +104,9 @@ export default function ProfilePage() {
             variant="outline"
             fullWidth
             onClick={() => {
-              localStorage.clear();
+              if (typeof window !== "undefined") {
+                localStorage.clear();
+              }
               router.push("/onboarding/welcome");
             }}
             className="text-red-600 border-red-300 hover:bg-red-50"

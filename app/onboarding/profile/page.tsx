@@ -18,7 +18,9 @@ export default function ProfilePage() {
       return;
     }
     // Store user data
-    localStorage.setItem("fullName", fullName);
+    if (typeof window !== "undefined") {
+      localStorage.setItem("fullName", fullName);
+    }
     router.push("/kyc/intro");
   };
 
