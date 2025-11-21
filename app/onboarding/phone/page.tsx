@@ -30,7 +30,7 @@ export default function PhonePage() {
       <div className="px-6 py-8">
         <div className="max-w-md mx-auto">
           <p className="text-gray-600 mb-6">
-            We'll send you a verification code to confirm your number.
+            We&apos;ll send you a verification code to confirm your number.
           </p>
           <form onSubmit={handleSubmit}>
             <Input

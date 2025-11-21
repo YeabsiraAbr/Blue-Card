@@ -23,7 +23,7 @@ export default function RepaymentConfirmationPage() {
           </p>
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
             <p className="text-sm text-blue-800">
-              <strong>Note:</strong> If you haven't completed the payment yet,
+              <strong>Note:</strong> If you haven&apos;t completed the payment yet,
               please follow the steps provided to complete your repayment.
             </p>
           </div>

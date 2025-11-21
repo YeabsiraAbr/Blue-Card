@@ -67,7 +67,7 @@ export default function USSDRepaymentPage() {
                       Select Payment Option
                     </h3>
                     <p className="text-sm text-gray-600">
-                      Choose "Pay Bill" or "Send Money" from the menu.
+                      Choose &quot;Pay Bill&quot; or &quot;Send Money&quot; from the menu.
                     </p>
                   </div>
                 </div>
@@ -123,7 +123,7 @@ export default function USSDRepaymentPage() {
             </div>
 
             <Button fullWidth onClick={handleComplete}>
-              I've Completed the Payment
+              I&apos;ve Completed the Payment
               <ArrowRight size={20} className="ml-2" />
             </Button>
           </Card>

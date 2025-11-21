@@ -52,7 +52,7 @@ export default function LoginPage() {
             </Button>
           </form>
           <p className="text-center text-sm text-gray-600 mt-6">
-            Don't have an account?{" "}
+            Don&apos;t have an account?{" "}
             <button
               onClick={() => router.push("/onboarding/welcome")}
               className="text-primary font-medium"

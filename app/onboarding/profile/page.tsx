@@ -30,7 +30,7 @@ export default function ProfilePage() {
       <div className="px-6 py-8">
         <div className="max-w-md mx-auto">
           <p className="text-gray-600 mb-6">
-            Let's start by getting your basic information.
+            Let&apos;s start by getting your basic information.
           </p>
           <form onSubmit={handleSubmit}>
             <Input
