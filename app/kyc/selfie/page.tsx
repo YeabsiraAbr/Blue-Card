@@ -33,13 +33,14 @@ export default function SelfiePage() {
               Take a Selfie
             </h2>
             <p className="text-gray-600 text-sm text-center">
-              We need to verify that you're a real person
+              We need to verify that you&apos;re a real person
             </p>
           </div>
 
           <div className="bg-white rounded-xl p-6 mb-6">
             <div className="relative aspect-square bg-gray-100 rounded-lg border-2 border-gray-300 flex items-center justify-center mb-4 overflow-hidden">
               {selfie ? (
+                // eslint-disable-next-line @next/next/no-img-element
                 <img
                   src={selfie}
                   alt="Selfie"

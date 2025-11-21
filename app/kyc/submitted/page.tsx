@@ -19,7 +19,7 @@ export default function SubmittedPage() {
           </h1>
           <p className="text-gray-600 mb-6">
             Your identity verification application has been submitted
-            successfully. Our team will review your information and you'll
+            successfully. Our team will review your information and you&apos;ll
             receive a notification once the review is complete.
           </p>
           <p className="text-sm text-gray-500 mb-8">

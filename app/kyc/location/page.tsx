@@ -61,6 +61,7 @@ export default function LocationPage() {
               </label>
               <div className="aspect-video bg-gray-100 rounded-lg border-2 border-dashed border-gray-300 flex items-center justify-center mb-2">
                 {residencePhoto ? (
+                  // eslint-disable-next-line @next/next/no-img-element
                   <img
                     src={residencePhoto}
                     alt="Residence"

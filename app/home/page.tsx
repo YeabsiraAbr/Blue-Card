@@ -68,10 +68,7 @@ export default function HomePage() {
                   Complete identity verification to unlock your virtual card and
                   access credit.
                 </p>
-                <Button
-                  fullWidth
-                  onClick={() => router.push("/kyc/intro")}
-                >
+                <Button fullWidth onClick={() => router.push("/kyc/intro")}>
                   Start Verification
                 </Button>
               </div>
@@ -98,8 +95,8 @@ export default function HomePage() {
                   Verification in Progress
                 </h2>
                 <p className="text-gray-600 text-sm mb-6">
-                  Your identity verification is being reviewed. You'll be
-                  notified once it's complete.
+                  Your identity verification is being reviewed. You&apos;ll be
+                  notified once it&apos;s complete.
                 </p>
               </div>
             </Card>
@@ -142,10 +139,7 @@ export default function HomePage() {
           </Card>
 
           {/* Virtual Card Preview */}
-          <div
-            onClick={() => router.push("/card")}
-            className="cursor-pointer"
-          >
+          <div onClick={() => router.push("/card")} className="cursor-pointer">
             <VirtualCard
               cardNumber="4532123456789012"
               expiryDate="12/25"
@@ -210,7 +204,9 @@ export default function HomePage() {
                   <div className="text-right">
                     <p
                       className={`font-semibold ${
-                        txn.type === "payment" ? "text-red-600" : "text-green-600"
+                        txn.type === "payment"
+                          ? "text-red-600"
+                          : "text-green-600"
                       }`}
                     >
                       {txn.type === "payment" ? "-" : "+"}ETB{" "}
@@ -228,4 +224,3 @@ export default function HomePage() {
     </div>
   );
 }
-

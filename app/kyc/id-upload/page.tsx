@@ -59,12 +59,14 @@ export default function IDUploadPage() {
           <div className="bg-white rounded-xl p-6 mb-6">
             <div className="aspect-video bg-gray-100 rounded-lg border-2 border-dashed border-gray-300 flex items-center justify-center mb-4">
               {currentSide === "front" && idFront ? (
+                // eslint-disable-next-line @next/next/no-img-element
                 <img
                   src={idFront}
                   alt="ID Front"
                   className="w-full h-full object-contain rounded-lg"
                 />
               ) : currentSide === "back" && idBack ? (
+                // eslint-disable-next-line @next/next/no-img-element
                 <img
                   src={idBack}
                   alt="ID Back"

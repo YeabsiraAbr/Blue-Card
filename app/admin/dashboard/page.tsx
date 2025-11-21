@@ -83,7 +83,7 @@ export default function AdminDashboardPage() {
       <div className="p-6">
         <div className="mb-6">
           <h1 className="text-2xl font-bold text-gray-900">Dashboard</h1>
-          <p className="text-gray-600">Overview of your institution's operations</p>
+          <p className="text-gray-600">Overview of your institution&apos;s operations</p>
         </div>
 
         {/* Stats Grid */}
@@ -186,7 +186,7 @@ export default function AdminDashboardPage() {
                       Check Credit Score
                     </p>
                     <p className="text-sm text-gray-600">
-                      Look up a user's credit score
+                      Look up a user&apos;s credit score
                     </p>
                   </div>
                 </div>
